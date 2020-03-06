@@ -1,0 +1,108 @@
+body {
+	margin: 0;
+	font: 400 0.813em Arial;
+	background: lavender;
+}
+
+/* email and name input, message textarea and subject select */
+input, textarea, #subject {
+	display: block;
+	width: 85%;
+	padding: 0.7% 0.3%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+/* email and name input and message textarea */
+#main > form > input, #main > form > textarea {
+	display: block;
+	width: 90%;
+	margin-bottom: 2%;
+}
+
+/* Subject select */
+#main > form > #subject {
+	width: 91%;
+	margin-bottom: 2%;
+}
+
+/* Send button */
+button {
+	width: 30%;
+	display: inline-block;
+	cursor: pointer;
+	padding: 2.5% 3%;
+	font-size: 0.95em;
+	border-radius: 3px;
+	border-style: none;
+	background-color: #d68916;
+	color: white;
+	margin: 2% 5%;
+	box-shadow: 0 5px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+												/* Media queries */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	#main {
+		width: 80%;
+		margin: 9% 10%;
+	}
+	#main > form > input, #main > form > textarea, #main > form > #subject {
+		margin: 0 5% 3% 5%;
+	}
+
+	button {
+		margin: 2% 5%;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width : 767px) {
+	#main {
+		width: 80%;
+		margin: 7% 10%;
+	}
+	#main > form > input, #main > form > textarea, #main > form > #subject {
+		margin: 0 5% 2% 5%;
+	}
+
+	button {
+		margin: 2% 5%;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width : 992px) {
+	#main {
+		width: 70%;
+		margin: 5% 15%;
+	}
+	#main > form > input, #main > form > textarea, #main > form > #subject {
+		margin: 0 5% 1.5% 5%;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width : 1200px) {
+	#main {
+		width: 60%;
+		margin: 5% 20%;
+	}
+	#main > form > input, #main > form > textarea, #main > form > #subject {
+		margin: 0 5% 2% 5%;
+	}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	#main {
+		width: 50%;
+		margin: 3% 25%;
+	}
+	#main > form > input, #main > form > textarea,#main > form > #subject {
+		margin: 0 5% 2.5% 5%;
+	}
+}

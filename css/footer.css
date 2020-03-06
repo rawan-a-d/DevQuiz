@@ -1,0 +1,94 @@
+													/* Footer */
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #138ba4;
+	color: white;
+	padding: 1%;
+	display: inline-block;
+	vertical-align: middle;
+	height: 13%;
+}
+
+/* Footer */
+footer >#about_us {
+	width: 46%;
+	display: inline-block;
+	margin-left: 3%;
+}
+
+#about_us > p {
+	font-size: 1.2em;
+}
+
+footer > #copyright {
+	display: inline-block;
+	width: 46%;
+	min-height:100%;
+	height: 100%;
+	text-align: right;
+	margin-right: 3%;
+}
+
+
+												/* Media queries */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	/*Footer */
+	footer {
+		padding-bottom: 6%;
+		font-size: 0.9em;
+	}
+
+	footer >#about_us {
+		width: 90%;
+		display: block;
+	}
+
+
+	footer > #copyright {
+		display: block;
+		width: 100%;
+		text-align: left;
+		margin-left: 3%;
+	}	
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width : 767px) {
+	/*Footer */
+	footer {
+		padding-bottom: 9%;
+	}
+	footer >#about_us {
+		width: 90%;
+		display: block;
+	}
+
+	footer > #copyright {
+		display: block;
+		width: 100%;
+		text-align: left;
+		margin-left: 3%;
+	}	
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width : 992px) {
+	/*Footer */
+	footer {
+		padding-bottom: 6%;
+	}
+	footer >#about_us {
+		width: 80%;
+		display: block;
+	}
+
+	footer > #copyright {
+		width: 100%;
+		text-align: left;
+		margin-left: 3%;
+	}	
+} 
