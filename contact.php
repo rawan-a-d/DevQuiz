@@ -1,23 +1,15 @@
+<?php  ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Contact us</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<link rel="stylesheet" type="text/css" href="../css/contact.css">
-		<link rel="stylesheet" type="text/css" href="../css/navbar.css">
-		<link rel="stylesheet" type="text/css" href="../css/footer.css">
-	</head>
-	<body>
-		<!-- Navbar -->
-		<nav>
-			<ul>
-				<li><a class="active" href="#home">Home</a></li>
-				<li><a href="#news">Profile</a></li>
-				<li><a href="#contact">About us</a></li>
-				<li><a href="#about">Contact</a></li>
-				<li id="logout"><a href="#logout">Log out</a></li>
-			</ul>
-		</nav>
+		<link rel="stylesheet" type="text/css" href="css/contact.css">
+
+	<!-- Include header -->
+	<?php include('templates/header.php') ?>
+
 		<!-- Main -->
 		<main id="main">
 			<form method="" target="">
@@ -41,16 +33,7 @@
 			</form>
 		</main>
 
-		<!-- Footer(about us section and copyright) -->
-		<footer>
-			<div id="about_us">
-				<p>About us</p>
-
-				We are Rawan Abou Dehn and Rares Băluţoiu, Software Engineering Students at Fontys University of Applied Sciences
-			</div>
-			<p id="copyright">
-				Copyright © 2020 Dev Quiz. All Rights Reserved
-			</p>
-		</footer>		
+		<!-- Include footer -->
+		<?php include('templates/footer.php') ?>
 	</body>
 </html>
