@@ -31,6 +31,7 @@ footer > #copyright {
 }
 
 * {
+    text-align: center;
      margin: 10; padding: 10; 
 }
 body { 
@@ -38,8 +39,8 @@ body {
 }
 
 .page-wrap	{ 
-    width: 500px; 
-    height: 500px;
+    width: 40%; 
+    /*height: 600px;*/
     margin: 0 auto; 
     box-shadow: 0 10px 20px 0 #138ba4;
 }
@@ -77,7 +78,7 @@ body {
     margin: 0 0 1px 0; 
  }
  .submitbutton{
-    width: 15%;
+    width: 25%;
     height: 50px;
     padding: 1px;
     -moz-border-radius: 35px;
@@ -90,4 +91,6 @@ body {
     margin-left: 40%;
     margin-top: 20%;
  }
- 
+ .testname{
+     color: #e69214;
+ }
