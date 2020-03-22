@@ -1,4 +1,3 @@
-
 footer {
 	position: fixed;
 	left: 0;
@@ -12,7 +11,7 @@ footer {
 	height: 6%;
 }
 
-footer >#about_us {
+footer > #about_us {
 	width: 46%;
 	display: inline-block;
 	margin-left: 3%;

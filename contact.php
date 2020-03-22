@@ -1,4 +1,10 @@
-<?php  ?>
+<?php 
+	/* Check session */
+	include('config/session.php');
+
+	/* Session expiry */
+	include('config/session_expiry.php');
+?>
 
 <!DOCTYPE html>
 <html>
