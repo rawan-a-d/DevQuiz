@@ -1,0 +1,235 @@
+body {
+	margin: 0;
+	font: 400 0.813em Arial;
+	background: lavender;
+}
+
+
+														/* Header */
+#website_purpose {
+	width: 70%;
+	margin: 4% 15% 2% 15%;
+}
+
+														/* Main */
+#main {
+	display: grid;
+	grid-auto-rows: minmax(30px, auto);
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 20px;
+	grid-row-gap: 50px;
+	padding: 1% 15%;
+	margin-bottom: 12%;
+}
+
+.technology_explanation {
+	padding: 2% 3%;
+}
+
+/* All boxes */
+.box {
+	border-radius: 6px;
+	font-size: 1.2em;
+	line-height: 1.6em;
+}
+
+/* HTML */
+#box_html_explanation {
+	grid-column: 1 / 2;
+	grid-row: 1 / 5;
+	border: #005769 2px solid;
+	box-shadow: 2px 4px 25px rgba(0,0,0,.15);
+}
+#box_html_example {
+	grid-column: 2 / 3;
+	grid-row: 1 /  5;
+}
+
+/* CSS */
+#box_css_explanation {
+	grid-column: 1 / 2;
+	grid-row: 5 / 9;
+	border: #005769 2px solid;
+	box-shadow: 2px 4px 25px rgba(0,0,0,.15);
+}
+#box_css_example {
+	grid-column: 2 / 3;
+	grid-row: 5 / 9;
+}
+
+/* JS */
+#box_js_explanation {
+	grid-column: 1 / 2;
+	grid-row: 9 / 13;
+	border: #005769 2px solid;
+	box-shadow: 2px 4px 25px rgba(0,0,0,.15);
+}
+#box_js_example {
+	grid-column: 2 / 3;
+	grid-row: 9 / 13;
+}
+
+/* levels button */
+button  {
+	width: 45%;
+	display: inline-block;
+	cursor: pointer;
+	padding: 10px 32px;
+	font-size: 0.95em;
+	border-radius: 3px;
+	border-style: none;
+	background-color: #d68916;
+	color:  white;
+	margin: 5% 2%;
+	box-shadow: 0 5px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/* Code */
+pre {
+    box-shadow: 2px 4px 25px rgba(0,0,0,.15);
+    white-space:pre-line;
+    display:block;
+	border-left:#005769 solid 4px;
+	border-bottom:#005769 solid 1px;
+	font-size: 1em;
+	color: black;
+	background: rgb(253, 253, 253);
+	height: 88%;
+	padding: 2% 0 0 2%;
+}	
+
+pre > p {
+	margin: 0;
+}
+
+
+												/* Media queries */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	#main {
+		grid-template-columns: repeat(1, 1fr);
+		grid-auto-rows: minmax(40px, auto);	
+		margin-bottom: 170px;
+	}
+	button {
+		width: 95%;
+		display: block;
+	}
+	#box_html_explanation {
+		grid-column: 1 / 2;
+		grid-row: 1 / 5;
+	}
+	#box_html_example {
+		grid-column: 1 / 2;
+		grid-row: 5 / 9;
+	}
+	#box_css_explanation {
+		grid-column: 1 / 2;
+		grid-row: 9 / 13;
+	}
+	#box_css_example  {
+		grid-column: 1 / 2;
+		grid-row: 13 / 17;
+	}
+	#box_js_explanation {
+		grid-column: 1 / 2;
+		grid-row: 17 / 20;
+	}
+	#box_js_example {
+		grid-column: 1 / 2;
+		grid-row: 20 / 24;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width : 767px) {
+	#main {
+		grid-template-columns: repeat(1, 1fr);
+		grid-auto-rows: minmax(40px, auto);	
+		margin-bottom: 180px;
+	}
+	button {
+		width: 95%;
+		display: block;
+	}
+	#box_html_explanation {
+		grid-column: 1 / 2;
+		grid-row: 1 / 5;
+	}
+	#box_html_example {
+		grid-column: 1 / 2;
+		grid-row: 5 / 9;
+	}
+	#box_css_explanation {
+		grid-column: 1 / 2;
+		grid-row: 9 / 13;
+	}
+	#box_css_example  {
+		grid-column: 1 / 2;
+		grid-row: 13 / 17;
+	}
+	#box_js_explanation {
+		grid-column: 1 / 2;
+		grid-row: 17 / 20;
+	}
+	#box_js_example {
+		grid-column: 1 / 2;
+		grid-row: 20 / 24;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width : 992px) {
+	button {
+		width: 80%;
+		display: block;
+	}
+	#main {
+		grid-template-columns: repeat(1, 1fr);
+		grid-auto-rows: minmax(40px, auto);	
+		margin-bottom: 210px;
+	}
+	button {
+		width: 44%;
+		display: inline-block;
+	}
+	#box_html_explanation {
+		grid-column: 1 / 2;
+		grid-row: 1 / 5;
+	}
+	#box_html_example {
+		grid-column: 1 / 2;
+		grid-row: 5 / 9;
+	}
+	#box_css_explanation {
+		grid-column: 1 / 2;
+		grid-row: 9 / 13;
+	}
+	#box_css_example  {
+		grid-column: 1 / 2;
+		grid-row: 13 / 17;
+	}
+	#box_js_explanation {
+		grid-column: 1 / 2;
+		grid-row: 17 / 20;
+	}
+	#box_js_example {
+		grid-column: 1 / 2;
+		grid-row: 20 / 24;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width : 1200px) {
+	#main {
+		margin-bottom: 170px;
+	}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	#main {
+		margin-bottom: 170px;
+	}
+}

@@ -1,0 +1,96 @@
+footer {
+	position: fixed;
+	left: 0;
+  bottom: 0;
+	width: 100%;
+	background-color: #138ba4;
+	color: white;
+	padding: 1%;
+	display: inline-block;
+	vertical-align: middle;
+	height: 6%;
+}
+
+footer >#about_us {
+	width: 46%;
+	display: inline-block;
+	margin-left: 3%;
+}
+
+#about_us > p {
+	font-size: 1.2em;
+}
+
+footer > #copyright {
+	display: inline-block;
+	width: 46%;
+	min-height:100%;
+	height: 100%;
+	text-align: right;
+	margin-right: 3%;
+}
+
+* {
+    text-align: center;
+     margin: 10; padding: 10; 
+}
+body { 
+    font: 14px Georgia, serif; 
+}
+
+.page-wrap	{ 
+    width: 40%; 
+    /*height: 600px;*/
+    margin: 0 auto; 
+    box-shadow: 0 10px 20px 0 #138ba4;
+}
+
+.page-wrap h1 { 
+    margin: 25px 0; 
+    font: 28px Arial, Serif; 
+    text-transform: uppercase; 
+    letter-spacing: 3px;
+    color: #e69214;
+}
+.page-wrap h2 { 
+    margin: 18px 0; 
+    font: 20px Georgia, Serif; 
+    letter-spacing: 3px;
+}
+
+.page-wrap h4 { 
+    margin: 18px 0; 
+    font: 20px Georgia, Serif; 
+    letter-spacing: 3px;
+}
+.page-wrap h5 { 
+    margin: 22px 0; 
+    font: 20px Georgia, Serif; 
+    letter-spacing: 3px;
+}
+.page-wrap h6 { 
+    margin: 18px 0; 
+    font: 20px Georgia, Serif; 
+    letter-spacing: 3px;
+}
+.page-wrap h3 {
+    font-size: 25px; 
+    margin: 0 0 1px 0; 
+ }
+ .submitbutton{
+    width: 25%;
+    height: 50px;
+    padding: 1px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    background-color: #e69214;
+    color: #138ba4;
+    position: sticky;
+    bottom: 1;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 20%;
+ }
+ .testname{
+     color: #e69214;
+ }
