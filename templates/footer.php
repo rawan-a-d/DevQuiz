@@ -8,5 +8,6 @@
 		<p id="copyright">
 			Copyright © 2020 Dev Quiz. All Rights Reserved
 		</p>
+		<script type="text/javascript" src="js/navbar.js"></script>
 	</footer>
 </body>

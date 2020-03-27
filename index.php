@@ -1,5 +1,4 @@
 <?php 
-
 	/* Check session */
 	include('config/session.php');
 

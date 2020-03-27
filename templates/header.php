@@ -6,9 +6,19 @@
 	<!-- Navbar -->
 	<nav>
 		<ul>
-			<li><a class="active" href="index.php">Home</a></li>
+			<li><a href="index.php">Home</a></li>
 			<li><a href="profile.html">Profile</a></li>
-			<li><a href="aboutus.html">About us</a></li>
+			<!-- If user is admin -->
+			<?php
+				if (isset($_SESSION['admin'])){
+					if($_SESSION['admin'] == 1)
+					{ ?>
+						<li><a href="admin.php">Admin</a></li>
+					<?php 
+					}
+				}
+			?>
+			<li><a href="aboutus.php">About us</a></li>
 			<li><a href="contact.php">Contact</a></li>
 			<li id="logout"><a href="logout.php">Log out</a></li>
 		</ul>

@@ -23,7 +23,6 @@
 			$emailExists = 'A user with this e-mail already exists';
 		}	
 	}
-
 ?>
 
 <!DOCTYPE html>
