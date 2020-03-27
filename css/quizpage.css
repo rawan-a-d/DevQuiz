@@ -41,7 +41,7 @@ body {
 .page-wrap	{ 
     width: 40%; 
     /*height: 600px;*/
-    margin: 0 auto; 
+    margin: 0 auto 10%;
     box-shadow: 0 10px 20px 0 #138ba4;
 }
 

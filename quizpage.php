@@ -1,18 +1,22 @@
 <?php
-    session_start();
+  /* Check session */
+  include('config/session.php');
+
+  /* Session expiry */
+  include('config/session_expiry.php');
+    // DB connection
+  include('config/db_connect.php');
+
+    include('mysql/functions.php');
+
     $ok=1;
     if (isset($_GET['subject'])) $subject=$_GET['subject'];
     else $ok=0;
     if (isset($_GET['level'])) $level=$_GET['level'];
     else $ok=0;
     if ($ok){
-      $host='127.0.0.1';
-	  	$port='3306';
-	  	$dbname='dbi414572';
-		  $user='root';
-		  $pass='';
-		  $db = new PDO('mysql:host='.$host.';port='.$port.';dbname='.$dbname,$user,$pass);
-		  $getQ = $db->prepare("SELECT * FROM questions WHERE subj=".$subject." AND level=".$level.";");
+      //include_once("templates/connect.php");
+		  $getQ = $conn->prepare("SELECT * FROM questions WHERE subj=".$subject." AND level=".$level.";");
 		  $getQ->execute();
       $questions = $getQ->fetchAll();
       $nrq=$getQ->rowCount();
@@ -60,7 +64,7 @@
   <header  id="website_purpose">
       <h1 class="testname">
         <?php 
-          $getS = $db->prepare("SELECT * FROM subjects WHERE id=".$q['subj'].";");
+          $getS = $conn->prepare("SELECT * FROM subjects WHERE id=".$q['subj'].";");
           $getS->execute();
           $subj_name = $getS->fetchAll();
           echo $subj_name[0]['name'];

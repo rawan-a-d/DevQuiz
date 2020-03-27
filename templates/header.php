@@ -7,7 +7,7 @@
 	<nav>
 		<ul>
 			<li><a href="index.php">Home</a></li>
-			<li><a href="profile.html">Profile</a></li>
+			<li><a href="profile.php">Profile</a></li>
 			<!-- If user is admin -->
 			<?php
 				if (isset($_SESSION['admin'])){

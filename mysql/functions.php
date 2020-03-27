@@ -47,6 +47,7 @@
 				// Save userId and name
 				$_SESSION["userId"] = $result['id'];
 				$_SESSION["username"] = $result['name'];
+				$_SESSION["email"] = $result['email'];
 
 				// Used in remember me
 				$_SESSION['loggedin_time'] = time();

@@ -31,8 +31,8 @@
 			the code that is used to structure a web page and its content. For example, content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables. As the title suggests, this article will give you a basic understanding of HTML and its functions.
 			<!-- Level buttons -->
 			<div>
-				<button id="level1">Beginner</button>
-				<button id="level2">Intermediate</button>
+				<button id="level1" onclick="redirect(1,1);";>Beginner</button>
+				<button id="level2" onclick="redirect(1,2);";>Intermediate</button>
 			</div>
 		</div>
 		<!-- Example HTML -->
@@ -55,8 +55,8 @@
 			CSS can be used for very basic document text styling — for example changing the color and size of headings and links. It can be used to create layout 
 			<!-- Level buttons -->
 			<div>
-				<button id="level1">Beginner</button>
-				<button id="level2">Intermediate</button>
+                <button id="level1" onclick="redirect(2,1);";>Beginner</button>
+                <button id="level2" onclick="redirect(2,2);";>Intermediate</button>
 			</div>
 		</div>
 		<!-- Example CSS -->
@@ -79,8 +79,8 @@
 			a programming language that adds interactivity to your website (for example games, responses when buttons are pressed or data is entered in forms, dynamic styling, and  animation). This article helps you get started with this exciting language and gives you an idea of what is possible.
 			<!-- Level buttons -->
 			<div>
-				<button id="level1">Beginner</button>
-				<button id="level2">Intermediate</button>
+				<button id="level1" onclick="redirect(3,1);";>Beginner</button>
+				<button id="level2" onclick="redirect(3,2);";>Intermediate</button>
 			</div>
 		</div>
 		<!-- Example JavaScript -->
@@ -98,4 +98,13 @@
 
 	<!-- Include footer -->
 	<?php include('templates/footer.php') ?>
+	<script>
+		function redirect( a, b){
+			var pathname = window.location.href;
+
+			//pathname = pathname.replace("/index.php", "/QuizPage.php?subject="+a+"&level="+b);
+
+			window.location.href += "QuizPage.php?subject="+a+"&level="+b
+		}
+	</script>
 </html>

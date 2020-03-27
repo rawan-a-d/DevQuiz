@@ -1,3 +1,14 @@
+<?php
+
+  /* Check session */
+  include('config/session.php');
+
+  /* Session expiry */
+  include('config/session_expiry.php');
+
+  /* Contact us */
+  include('mysql/functions.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,23 +16,14 @@
 	<title>Profile</title>
   <link rel="stylesheet" type="text/css" href="css/profile.css">
   <link rel="stylesheet" type="text/css" href="css/aboutus.css">
-  <link rel="stylesheet" type="text/css" href="css/navbar.css">
-</head>
-<body>
-  <nav>
-    <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="#news">Profile</a></li>
-      <li><a href="#contact">About us</a></li>
-      <li><a href="#about">Contact</a></li>
-      <li id="logout"><a href="#logout">Log out</a></li>
-    </ul>
-  </nav>
+	<!-- Include header -->
+	<?php include('templates/header.php') ?>
+
 <div class="wrapper">
     <div class="left">
         <img src="IDPic.jpeg" 
         alt="user" width="100">
-        <h4>Rares Băluţoiu</h4>
+        <h4><?php echo $_SESSION["username"];?></h4>
          
     </div>
     <div class="right">
@@ -29,11 +31,11 @@
             <div class="info_data">
                  <div class="data">
                     <h4>Email</h4>
-                    <p>rbalutoiu@gmail.com</p>
+                    <p><?php echo $_SESSION["email"];?></p>
                  </div>
                  <div class="data">
-                   <h4>Age</h4>
-                    <p>20</p>
+                   <h4>Birthday</h4>
+                    <!-- <p><?php echo $birthday;?></p> -->
               </div>
             </div>
         </div>
@@ -42,25 +44,17 @@
             <div class="bottom_data">
                  <div class="data">
                     <h4>University</h4>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <!-- <p><?php echo $university;?></p> -->
                  </div>
                  <div class="data">
                    <h4>Progamming languages</h4>
-                    <p>Dolor sit amet.</p>
+                    <!-- <p><?php echo $program;?>.</p> -->
               </div>
             </div>
         </div>
     </div>
 </div>
-<footer>
-  <div id="about_us">
-    <p>About us</p>
 
-    We are Rawan Abou Dehn and Rares Băluţoiu, Software Engineering Students at Fontys University of Applied Sciences
-  </div>
-  <p id="copyright">
-    Copyright © 2020 Dev Quiz. All Rights Reserved
-  </p>
-</footer>
-</body>
+	<!-- Include footer -->
+	<?php include('templates/footer.php'); ?>
 </html>
