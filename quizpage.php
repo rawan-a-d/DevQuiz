@@ -6,12 +6,7 @@
     if (isset($_GET['level'])) $level=$_GET['level'];
     else $ok=0;
     if ($ok){
-      $host='127.0.0.1';
-	  	$port='3306';
-	  	$dbname='dbi414572';
-		  $user='root';
-		  $pass='';
-		  $db = new PDO('mysql:host='.$host.';port='.$port.';dbname='.$dbname,$user,$pass);
+      include_once("templates/connect.php");
 		  $getQ = $db->prepare("SELECT * FROM questions WHERE subj=".$subject." AND level=".$level.";");
 		  $getQ->execute();
       $questions = $getQ->fetchAll();
