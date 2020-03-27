@@ -1,11 +1,17 @@
 <?php
-    session_start();  
+   /* Check session */
+      include('config/session.php');
+
+      /* Session expiry */
+      include('config/session_expiry.php');
+          // DB connection
+     include('config/db_connect.php');
     if (isset($_GET['qtype']))  
     {
         $type=$_GET['qtype'];
         $qnr=0;
-        include_once("templates/connect.php");
-        $getQ = $db->prepare("SELECT * FROM questions WHERE subj='".$type."';");
+       // include_once("templates/connect.php");
+        $getQ = $conn->prepare("SELECT * FROM questions WHERE subj='".$type."';");
         $getQ->execute();
         $questions = $getQ->fetchAll();
         if (!isset($_SESSION['qnr']))
@@ -34,8 +40,8 @@
     {
         if (!isset($_GET['type']))
         {
-            include_once("templates/connect.php");
-		    $getQ = $db->prepare("SELECT * FROM questions;");
+            //include_once("templates/connect.php");
+		    $getQ = $conn->prepare("SELECT * FROM questions;");
 		    $getQ->execute();
 		    $questions = $getQ->fetchAll();
             if (!isset($_SESSION['qnr']))
@@ -62,8 +68,8 @@
         {
             $type=$_GET['type'];
             $qnr=0;
-            include_once("templates/connect.php");
-            $getQ = $db->prepare("SELECT * FROM questions WHERE subj='".$type."';");
+            //include_once("templates/connect.php");
+            $getQ = $conn->prepare("SELECT * FROM questions WHERE subj='".$type."';");
 		    $getQ->execute();
 		    $questions = $getQ->fetchAll();
             if (!isset($_SESSION['qnr']))
@@ -97,8 +103,8 @@
     }
     else
     {
-        include_once("templates/connect.php");
-		$setQ = $db->prepare("UPDATE questions SET question='".$_POST['question']."', ans_a='".$_POST['answer1']."', ans_b='".$_POST['answer2']."', ans_c='".$_POST['answer3']."', ans_d='".$_POST['answer4']."', answer='".$_POST['canswer']."' WHERE id='".$_SESSION['qnr']."';");
+        // include_once("templates/connect.php");
+		$setQ = $conn->prepare("UPDATE questions SET question='".$_POST['question']."', ans_a='".$_POST['answer1']."', ans_b='".$_POST['answer2']."', ans_c='".$_POST['answer3']."', ans_d='".$_POST['answer4']."', answer='".$_POST['canswer']."' WHERE id='".$_SESSION['qnr']."';");
         $setQ->execute();
         $q=$_POST['question'];
         $a1=$_POST['answer1'];
@@ -108,7 +114,7 @@
         $c=$_POST['canswer'];
         $type=$_SESSION['qtype'];
     }
-    $gettype = $db->prepare("SELECT * FROM subjects;");
+    $gettype = $conn->prepare("SELECT * FROM subjects;");
 	$gettype->execute();
     $typename = $gettype->fetchAll();
         
