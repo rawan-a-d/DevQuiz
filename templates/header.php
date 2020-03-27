@@ -6,10 +6,10 @@
 	<!-- Navbar -->
 	<nav>
 		<ul>
-			<li><a class="active" href="#home">Home</a></li>
-			<li><a href="#news">Profile</a></li>
-			<li><a href="#contact">About us</a></li>
-			<li><a href="#about">Contact</a></li>
-			<li id="logout"><a href="#logout">Log out</a></li>
+			<li><a class="active" href="index.php">Home</a></li>
+			<li><a href="profile.html">Profile</a></li>
+			<li><a href="aboutus.html">About us</a></li>
+			<li><a href="contact.php">Contact</a></li>
+			<li id="logout"><a href="logout.php">Log out</a></li>
 		</ul>
 	</nav>

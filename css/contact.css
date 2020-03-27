@@ -17,13 +17,20 @@ input, textarea, #subject {
 #main > form > input, #main > form > textarea {
 	display: block;
 	width: 90%;
-	margin-bottom: 2%;
+	margin-bottom: 0;
 }
 
 /* Subject select */
 #main > form > #subject {
 	width: 91%;
-	margin-bottom: 2%;
+	margin-bottom: 0;
+}
+
+/* Errors under input */
+div.error {
+	color: red;
+	margin: 0 5% 2%;
+	font: bold .815rem Arial;
 }
 
 /* Send button */
@@ -103,6 +110,6 @@ button {
 		margin: 3% 25%;
 	}
 	#main > form > input, #main > form > textarea,#main > form > #subject {
-		margin: 0 5% 2.5% 5%;
+		margin: 0 5% 1.5% 5%;
 	}
 }
