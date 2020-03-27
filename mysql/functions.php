@@ -141,4 +141,45 @@
 			return false;
 		}
 	}
+
+	// Contact us
+	function contact($subject, $message){
+		global $conn;
+
+		$subject = $subject;
+		$message = $message;
+
+		// Start user session
+		session_start();
+
+		// Get user id
+		$userId = $_SESSION['userId'];
+
+		try {
+			// Create sql query
+			$sql = "INSERT INTO messages (subject, message, userId) ";
+			$sql .= "VALUES (:subject, :message, :userId)";
+
+			$statement = $conn -> prepare($sql);
+
+			// bind parameters to values
+			$statement->bindParam(':subject', $subject);
+			$statement->bindParam(':message', $message);
+			$statement->bindParam(':userId', $userId);
+
+			$statement->execute();
+
+			$result = $statement->fetch();
+
+			// Close DB connection
+			$conn = null;
+
+			// Start user session
+			header('Location: contact.php');
+
+		}
+		catch(PDOEXCEPTION $e) {
+		    print_r("Something went wrong: " . $e->getMessage());
+		}
+	}
 ?>

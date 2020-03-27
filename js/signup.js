@@ -3,13 +3,19 @@ function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
 }
 
+
 // Defining a function to validate form 
 function validateForm() {
+
 	// Retrieving the values of form elements 
 	var name = document.getElementById("name").value;
 	var email = document.getElementById("email").value;
 	var password = document.getElementById("password").value;
 	var confirmPassword = document.getElementById("confirmPassword").value;
+	// splitting name
+	var nameArr = name.split(' ');
+	var firstName = nameArr[0];
+	var lastName = nameArr[1];
 
 	// Defining error variables with a default value
 	var nameErr = true;
@@ -51,7 +57,12 @@ function validateForm() {
 	//Validate password
 	if(password == "") {
 		printError("passwordErr", "Please enter your password");
-	} 
+	}
+	// If password contains first or last name or both
+	else if(password.includes(firstName) || password.includes(lastName)){
+
+		printError("passwordErr", "Password can't contain you name");
+	}
 	else {
 		// To check a password between 7 to 15 characters which contain at least one numeric digit and a special character
 		var regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
@@ -66,6 +77,10 @@ function validateForm() {
     // Validate password
 	if(confirmPassword == "") {
 		printError("confirmPasswordErr", "Please enter your password");
+	}
+	// If password contains first or last name or both
+	else if(confirmPassword.includes(firstName) || confirmPassword.includes(lastName)){
+		printError("confirmPasswordErr", "Password can't contain you name");
 	}
 	else {
 		// To check a password between 7 to 15 characters which contain at least one numeric digit and a special character
