@@ -98,13 +98,6 @@
 
 	<!-- Include footer -->
 	<?php include('templates/footer.php') ?>
-	<script>
-		function redirect( a, b){
-			var pathname = window.location.href;
-
-			//pathname = pathname.replace("/index.php", "/QuizPage.php?subject="+a+"&level="+b);
-
-			window.location.href += "QuizPage.php?subject="+a+"&level="+b
-		}
-	</script>
+	<!-- JS -->
+	<script type="text/javascript" src="js/index.js"></script>
 </html>

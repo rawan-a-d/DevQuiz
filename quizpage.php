@@ -56,7 +56,21 @@
         if (x[i].checked) ans = x[i].value;
         if (ans=='<?php echo $q['answer'];?>') var ok=1;
         else var ok=0;
-        window.location.href="/QuizPage.php?subject=<?php echo $subject;?>&level=<?php echo $level;?>&c="+ok;
+
+          // get current URL path and assign 'active' class
+          var pathname = window.location.href;
+
+          // Split url
+          var splitPath = pathname.split("/");
+
+          // Remove last item
+          splitPath.splice(splitPath.length - 1, 1);
+
+          // Join the url again
+          var currentPathname = splitPath.join("/");
+
+          // Redirect
+          window.location.href = currentPathname + "/QuizPage.php?subject=<?php echo $subject;?>&level=<?php echo $level;?>&c="+ok;
       }
     </script>
 
@@ -121,13 +135,6 @@
           <h3><?php echo $_SESSION['correctans'];?>  /  <?php echo $nrq;?></h3>
           </div>
           <?php
-          $name=$_SESSION['login'];
-          $admin=$_SESSION['admin'];
-          session_unset();
-          session_destroy();
-          session_start();
-          $_SESSION['login']=$name;
-          $_SESSION['admin']=$admin;
         }?>
     
 </div>
