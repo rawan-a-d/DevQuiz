@@ -1,0 +1,116 @@
+
+footer {
+	position: fixed;
+	left: 0;
+  bottom: 0;
+	width: 100%;
+	background-color: #138ba4;
+	color: white;
+	padding: 1%;
+	display: inline-block;
+	vertical-align: middle;
+	height: 6%;
+}
+
+footer >#about_us {
+	width: 46%;
+	display: inline-block;
+	margin-left: 3%;
+}
+
+#about_us > p {
+	font-size: 1.2em;
+}
+
+footer > #copyright {
+	display: inline-block;
+	width: 46%;
+	min-height:100%;
+	height: 100%;
+	text-align: right;
+	margin-right: 3%;
+}
+.wrapper{
+    margin-top: 4%;
+  }
+  
+  .wrapper h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 65px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  
+  .team{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  
+  .team .team_member{
+    background: #e69214;
+    margin: 12px;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 55px;
+    width: 350px;
+    padding: 40px;
+    line-height: 40px;
+    color:#003d75;  
+    position: relative;
+    box-shadow: 0 10px 20px 0 #138ba4;
+  }
+  
+  .team .team_member h3{
+    font-size: 30px;
+    margin-top: 50px;
+  }
+  
+  .team .team_member p.smallinfo{
+    margin: 12px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+  .team .team_member .team_img{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+  }
+  
+  .team .team_member .team_img img{
+    width: 100px;
+    height: 100px;
+  }
+
+  /*small devices(phones)*/
+  @media only screen and (max-width: 600px) {
+    /*Footer */
+
+	footer {
+		padding-bottom: 9%;
+		font-size: 0.9em;
+	}
+
+	footer >#about_us {
+		width: 90%;
+		display: block;
+	}
+
+
+	footer > #copyright {
+		display: block;
+		width: 100%;
+		text-align: left;
+		margin-left: 3%;
+	}	
+  }
