@@ -1,10 +1,9 @@
-* {
-    text-align: center;
-     margin: 10; padding: 10; 
+body {
+    margin: 0;
+    font: 400 0.813em Arial;
+    background: lavender;
 }
-body { 
-    font: 14px Georgia, serif; 
-}
+
 
 .page-wrap	{ 
     width: 40%; 

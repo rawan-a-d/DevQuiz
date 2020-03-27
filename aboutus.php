@@ -29,7 +29,7 @@
       </div>
       <div class="team_member">
         <div class="team_img">
-          <img src="rawan.jpg" alt="Team_image">
+          <img src="img/rawan.jpg" alt="Team_image">
         </div>
         <h3>Rawan Abou Dehn</h3>
         <p class="smallinfo">Software Engineering Student at Fontys University of Applied Sciences</p>

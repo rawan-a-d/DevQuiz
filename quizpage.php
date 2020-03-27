@@ -40,7 +40,7 @@
 		<title>Dev Quiz</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
     <link rel="stylesheet" type="text/css" href="css/home.css">
-    <link rel="stylesheet" type="text/css" href="css/QuizPage.css">
+    <link rel="stylesheet" type="text/css" href="css/quizpage.css">
 
    
 	<!-- Include header -->
