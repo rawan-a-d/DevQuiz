@@ -6,7 +6,7 @@
 	include('mysql/functions.php');
 
 	// initilize needed variabled to display entered data
-	$email = $password = $confirm_password = $remember_me = '';
+	$name = $email = $password = $confirm_password = $remember_me = '';
 
 	$emailExists = '';
 
@@ -32,12 +32,11 @@
 		<div id="container">
 			<form id="form" action="signup.php" method="POST" onsubmit="return validateForm()">
 				<!-- Three inputs for credentials -->
-				<input class="credentials" id="name" type="text" name="name" placeholder="Name"
-				autocomplete="on">
+				<input class="credentials" id="name" type="text" name="name" placeholder="Name">
 				<!-- Display errors -->
 				<div class="error" id="nameErr">
 				</div>
-				<input class="credentials" id="email" type="email" name="email" placeholder="E-mail address" autocomplete="on">
+				<input class="credentials" id="email" type="email" name="email" placeholder="E-mail address">
 				<!-- Display errors -->
 				<div class="error" id="emailErr">
 				</div>
@@ -48,9 +47,6 @@
 				<input  class="credentials" id="confirmPassword" type="password" name="confirm_password" placeholder="Repeat password">
 				<!-- Display errors -->
 				<div class="error" id="confirmPasswordErr">
-				</div>
-				<!-- Display errors -->
-				<div class="error">
 				</div>
 
 				<!-- Buttons login and sign up -->
