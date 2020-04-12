@@ -4,6 +4,11 @@ body {
 	background: lavender;
 }
 
+                        /* Content */
+#content {
+  min-height: calc(82vh - 70px);
+}
+
 /* email and name input, message textarea and subject select */
 input, textarea, #subject {
 	display: block;

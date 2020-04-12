@@ -1,33 +1,13 @@
-footer {
-	position: fixed;
-	left: 0;
-  bottom: 0;
-	width: 100%;
-	background-color: #138ba4;
-	color: white;
-	padding: 1%;
-	display: inline-block;
-	vertical-align: middle;
-	height: 6%;
+body {
+  margin: 0;
+  font: 400 0.813em Arial;
+  background: lavender;
 }
 
-footer >#about_us {
-	width: 46%;
-	display: inline-block;
-	margin-left: 3%;
-}
 
-#about_us > p {
-	font-size: 1.2em;
-}
-
-footer > #copyright {
-	display: inline-block;
-	width: 46%;
-	min-height:100%;
-	height: 100%;
-	text-align: right;
-	margin-right: 3%;
+                        /* Content */
+#content {
+  min-height: calc(88vh - 68px);
 }
 
 .wrapper{

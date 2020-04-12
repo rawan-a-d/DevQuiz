@@ -1,36 +1,17 @@
-footer {
-	position: fixed;
-	left: 0;
-  bottom: 0;
-	width: 100%;
-	background-color: #138ba4;
-	color: white;
-	padding: 1%;
-	display: inline-block;
-	vertical-align: middle;
-	height: 6%;
+body {
+  margin: 0;
+  font: 400 0.813em Arial;
+  background: lavender;
 }
 
-footer > #about_us {
-	width: 46%;
-	display: inline-block;
-	margin-left: 3%;
+                        /* Content */
+#content {
+  min-height: calc(86vh - 70px);
 }
 
-#about_us > p {
-	font-size: 1.2em;
-}
-
-footer > #copyright {
-	display: inline-block;
-	width: 46%;
-	min-height:100%;
-	height: 100%;
-	text-align: right;
-	margin-right: 3%;
-}
 .wrapper{
     margin-top: 4%;
+    margin-bottom: 7%;
   }
   
   .wrapper h1{
@@ -88,28 +69,7 @@ footer > #copyright {
   
   .team .team_member .team_img img{
     width: 100px;
-    height: 100px;
+    height: 110px;
+    border-radius: 50%;
   }
-
-  /*small devices(phones)*/
-  @media only screen and (max-width: 600px) {
-    /*Footer */
-
-	footer {
-		padding-bottom: 9%;
-		font-size: 0.9em;
-	}
-
-	footer >#about_us {
-		width: 90%;
-		display: block;
-	}
-
-
-	footer > #copyright {
-		display: block;
-		width: 100%;
-		text-align: left;
-		margin-left: 3%;
-	}	
-  }
+}

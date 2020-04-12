@@ -39,14 +39,20 @@
 				// Start user session
 				session_start();
 
+				// Check user role (Admin or user)
+				if($result["isAdmin"] == 1){
+					$_SESSION["admin"] = 1;
+				}
+
 				// Save userId and name
 				$_SESSION["userId"] = $result['id'];
 				$_SESSION["username"] = $result['name'];
+				$_SESSION["email"] = $result['email'];
 
 				// Used in remember me
-				$_SESSION['loggedin_time'] = time();  
+				$_SESSION['loggedin_time'] = time();
 
-				//Check remember me
+				//Check remember me, ***** if it's set******
 				if(!isset($_POST['remember_me'])){
 					$remember_me = $_POST['remember_me'];
 					$_SESSION['remember_me'] = $remember_me;

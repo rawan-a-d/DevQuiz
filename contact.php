@@ -28,31 +28,31 @@
 
 	<!-- Include header -->
 	<?php include('templates/header.php') ?>
-
-		<!-- Main -->
-		<main id="main">
-			<form method="POST" action="contact.php" onsubmit="return validateForm()">
-				<select id="subject" name="subject">
-					<option value="subject">Select a subject</option>
-					<option value="Quiz">Quiz</option>
-					<option value="Score">Score</option>
-					<option value="Other">Other</option>
-				</select>
-				<!-- Display errors -->
-				<div class="error" id="subjectErr">
-				</div>
-				<!-- Message -->
-				<textarea id="message" type="text" rows="14" name="message"></textarea>
-				<!-- Display errors -->
-				<div class="error" id="messageErr">
-				</div>
-				<!-- Submit button -->
-				<button id="submit" type="submit" name="submit">
-					Send
-				</button>
-			</form>
-		</main>
-
+		<div id="content">
+			<!-- Main -->
+			<main id="main">
+				<form method="POST" action="contact.php" onsubmit="return validateForm()">
+					<select id="subject" name="subject">
+						<option value="subject">Select a subject</option>
+						<option value="Quiz">Quiz</option>
+						<option value="Score">Score</option>
+						<option value="Other">Other</option>
+					</select>
+					<!-- Display errors -->
+					<div class="error" id="subjectErr">
+					</div>
+					<!-- Message -->
+					<textarea id="message" type="text" rows="14" name="message"></textarea>
+					<!-- Display errors -->
+					<div class="error" id="messageErr">
+					</div>
+					<!-- Submit button -->
+					<button id="submit" type="submit" name="submit">
+						Send
+					</button>
+				</form>
+			</main>
+		</div>
 		<!-- Include footer -->
 		<?php include('templates/footer.php') ?>
 		<!-- JS -->

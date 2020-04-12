@@ -1,3 +1,11 @@
+<?php  
+  /* Check session */
+  include('config/session.php');
+
+  /* Session expiry */
+  include('config/session_expiry.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,17 +14,8 @@
   <link rel="stylesheet" type="text/css" href="css/aboutus.css">
   <link rel="stylesheet" type="text/css" href="css/navbar.css">
 </head>
-<body>
-  <nav>
-    <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="#news">Profile</a></li>
-      <li><a href="#contact">About us</a></li>
-      <li><a href="#about">Contact</a></li>
-      <li id="logout"><a href="#logout">Log out</a></li>
-    </ul>
-  </nav>
-
+<!-- Include header -->
+<?php include('templates/header.php') ?>
   <div class="wrapper">
     <h1>Our Team</h1>
     <div class="team">
@@ -30,22 +29,14 @@
       </div>
       <div class="team_member">
         <div class="team_img">
-          <img src="Rawan.jpeg" alt="Team_image">
+          <img src="img/rawan.jpg" alt="Team_image">
         </div>
         <h3>Rawan Abou Dehn</h3>
         <p class="smallinfo">Software Engineering Student at Fontys University of Applied Sciences</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p></div>
     </div>
   </div>	
-  <footer>
-    <div id="about_us">
-      <p>About us</p>
-
-      We are Rawan Abou Dehn and Rares Băluţoiu, Software Engineering Students at Fontys University of Applied Sciences
-    </div>
-    <p id="copyright">
-      Copyright © 2020 Dev Quiz. All Rights Reserved
-    </p>
-  </footer>
-</body>
+  	<!-- Include footer -->
+		<?php include('templates/footer.php') ?>
+	</body>
 </html>

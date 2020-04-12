@@ -5,6 +5,11 @@ ul {
 	padding: 0;
 	overflow: hidden;
 	background-color: #138ba4;
+	opacity: 0.9;
+/*	position: fixed;
+*/	/*left: 0;
+	top: 0;*/
+	width: 100%;
 }
 
 li {
