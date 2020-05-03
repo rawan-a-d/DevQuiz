@@ -14,6 +14,7 @@ body {
 #website_purpose {
 	width: 70%;
 	margin: 7% 15% 1% 15%;
+	font-size: 1.1em;
 }
 
 														/* Main */
@@ -39,6 +40,7 @@ body {
 	grid-column: 1 / 2;
 	grid-row: 1 / 5;
 	border: #005769 2px solid;
+	text-align: center;
 /*	box-shadow: 2px 4px 25px rgba(0,0,0,.15);*/
 }
 #box_html_example {
@@ -51,8 +53,8 @@ body {
 	grid-column: 1 / 2;
 	grid-row: 5 / 9;
 	border: #005769 2px solid;
-/*	box-shadow: 2px 4px 25px rgba(0,0,0,.15);
-*/}
+	text-align: center;
+}
 #box_css_example {
 	grid-column: 2 / 3;
 	grid-row: 5 / 9;
@@ -63,25 +65,22 @@ body {
 	grid-column: 1 / 2;
 	grid-row: 9 / 13;
 	border: #005769 2px solid;
-/*	box-shadow: 2px 4px 25px rgba(0,0,0,.15);
-*/}
+	text-align: center;
+}
 #box_js_example {
 	grid-column: 2 / 3;
 	grid-row: 9 / 13;
 }
 
 /* levels button */
-button  {
-	width: 35%;
-	display: inline-block;
+button {
 	cursor: pointer;
-	padding: 10px 32px;
+	padding: 10px 0;
 	font-size: 0.95em;
 	border-radius: 3px;
 	border-style: none;
 	background-color: #d68916;
 	color:  white;
-	margin : 5% 7%;
 	box-shadow: 0 5px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -105,6 +104,57 @@ pre > p {
 }
 
 
+												/* Card */
+.card, .cardJS, .cardCSS
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back
+{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+.front
+{
+	font-size: 1.4em;
+    display: flex;
+}
+
+.back
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+	background: #fff;
+}
+
+.back > p {
+	margin : 5% 7%;
+}
+
+.card-container {
+  	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  	transition: 0.4s;
+    cursor: pointer;
+}
+
+.card-container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+
 												/* Media queries */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -117,9 +167,19 @@ pre > p {
 		grid-auto-rows: minmax(40px, auto);	
 	}
 	button {
-		width: 95%;
+		width: 70%;
 		display: block;
+		margin: 3% 15%;
 	}
+
+	.box {
+		font-size: 1em;
+	}
+
+	pre {
+		font-size: 1.2em;
+	}
+
 	#box_html_explanation {
 		grid-column: 1 / 2;
 		grid-row: 1 / 5;
@@ -138,11 +198,11 @@ pre > p {
 	}
 	#box_js_explanation {
 		grid-column: 1 / 2;
-		grid-row: 17 / 20;
+		grid-row: 17 / 21;
 	}
 	#box_js_example {
 		grid-column: 1 / 2;
-		grid-row: 20 / 24;
+		grid-row: 21 / 25;
 	}
 }
 
@@ -153,8 +213,9 @@ pre > p {
 		grid-auto-rows: minmax(40px, auto);	
 	}
 	button {
-		width: 95%;
-		display: block;
+		width: 30%;
+		display: inline-block;
+		margin: 5% 9%;
 	}
 	#box_html_explanation {
 		grid-column: 1 / 2;
@@ -174,28 +235,27 @@ pre > p {
 	}
 	#box_js_explanation {
 		grid-column: 1 / 2;
-		grid-row: 17 / 20;
+		grid-row: 17 / 21;
 	}
 	#box_js_example {
 		grid-column: 1 / 2;
-		grid-row: 20 / 24;
+		grid-row: 21 / 25;
 	}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width : 992px) {
 	button {
-		width: 80%;
-		display: block;
+		display: inline-block;
+		width: 33%;
+		margin: 2% 8%;
 	}
+
 	#main {
 		grid-template-columns: repeat(1, 1fr);
 		grid-auto-rows: minmax(40px, auto);	
 	}
-	button {
-		width: 44%;
-		display: inline-block;
-	}
+
 	#box_html_explanation {
 		grid-column: 1 / 2;
 		grid-row: 1 / 5;
@@ -224,82 +284,18 @@ pre > p {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) and (max-width : 1200px) {
-/*	#main {
-		margin-bottom: 170px;
-	}*/
+	button {
+		width: 40%;
+		display: inline-block;
+		margin: 2% 4%;
+	}
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-/*	#main {
-		margin-bottom: 170px;
-	}*/
+	button {
+		width: 40%;
+		display: inline-block;
+		margin: 2% 4%;
+	}
 }
-
-
-
-
-/**/
-
-.card, .cardJS, .cardCSS
-{
-    position: relative;
-
-    height: 100%;
-
-/*    border-radius: 10px;
-*/
-    width: 100%;
-    transform-style: preserve-3d;
-}
-
-.front,
-.back
-{
-/*    display: flex;
-*/
-    width: 100%;
-    height: 100%;
-
-/*    border-radius: 10px;
-*/
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden;
-}
-
-.front
-{
-/*	background: #d5d5f3;
-*/		font-size: 1.4em;
-    display: flex;
-/*    color: #fff;
-*//*    background: #2196f3;
-*/}
-
-.back
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotateY(180deg);
-
-/*    color: #2196f3;
-*/    background: #fff;
-}
-
-.back > p {
-	margin : 5% 7%;
-}
-
-.card-container {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.4s;
-         cursor: pointer;
-/*  width: 40%;
-*/}
-
-.card-container:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-

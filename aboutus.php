@@ -4,6 +4,7 @@
 
   /* Session expiry */
   include('config/session_expiry.php');
+
 ?>
 
 <!DOCTYPE html>

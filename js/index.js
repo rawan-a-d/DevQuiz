@@ -1,3 +1,4 @@
+														/* Card flipping */
 var card = document.querySelector(".card");
 var playing = false;
 
@@ -60,7 +61,9 @@ cardJS.addEventListener('click',function() {
 	});
 });
 
-/* Redirect to quizzes */
+
+
+											/* Redirect to quizzes */
 function redirect( a, b){
 	// get current URL path and assign 'active' class
 	var pathname = window.location.href;

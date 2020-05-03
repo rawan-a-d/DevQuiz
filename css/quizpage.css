@@ -1,17 +1,7 @@
-/*html, body {
-    height: 100vh;
-}*/
-
-
 body {
     margin: 0;
     font: 400 0.813em Arial;
     background: lavender;
-}
-
-                        /* Content */
-#content {
-    min-height: calc(100vh - 152px);
 }
 
 

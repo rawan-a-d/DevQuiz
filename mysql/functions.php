@@ -74,6 +74,7 @@
 	} // END LOGIN
 
 
+
 	/* SIGNUP */
 	function signup($name, $email, $password){
 		global $conn;
@@ -120,33 +121,41 @@
 		    print_r("Something went wrong: " . $e->getMessage());
 		}
 	} // End signup
+	
 
 
 	/* Email already exists, used in signup */
 	function emailExists($email){	
 		global $conn;
 
-		// Create sql
-		$sql = "SELECT id FROM users WHERE email= :email";
+		try {
 
-		$statement = $conn -> prepare($sql);
+			// Create sql
+			$sql = "SELECT id FROM users WHERE email= :email";
 
-		// bind parameters to values
-	    $statement->bindParam(':email', $email);
+			$statement = $conn -> prepare($sql);
 
-		$statement->execute();
+			// bind parameters to values
+		    $statement->bindParam(':email', $email);
 
-		$user = $statement->fetch();	
+			$statement->execute();
 
-		// Close DB connection
-		$conn = null;
-		if($user){
-			return true;
+			$user = $statement->fetch();	
+
+			// Close DB connection
+			$conn = null;
+			if($user){
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
-		else {
-			return false;
+		catch(PDOEXCEPTION $e) {
+		    print_r("Something went wrong: " . $e->getMessage());
 		}
 	}
+
 
 	// Contact us
 	function contact($subject, $message){
@@ -154,9 +163,6 @@
 
 		$subject = $subject;
 		$message = $message;
-
-		// Start user session
-		session_start();
 
 		// Get user id
 		$userId = $_SESSION['userId'];
@@ -179,10 +185,6 @@
 
 			// Close DB connection
 			$conn = null;
-
-			// Start user session
-			header('Location: contact.php');
-
 		}
 		catch(PDOEXCEPTION $e) {
 		    print_r("Something went wrong: " . $e->getMessage());

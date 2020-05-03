@@ -10,13 +10,12 @@
 
 	$subject = $message = "";
 
-	// If post request was sent
-	if(isset($_POST['submit'])){
-		$subject = $_POST['subject'];
-		$message = $_POST['message'];
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+		$subject = htmlspecialchars(trim($_POST["subject"]));
+		$message = htmlspecialchars(trim($_POST["message"]));
 
 		contact($subject, $message);
-	}
+   }
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +27,12 @@
 
 	<!-- Include header -->
 	<?php include('templates/header.php') ?>
+	
 		<div id="content">
 			<!-- Main -->
 			<main id="main">
-				<form method="POST" action="contact.php" onsubmit="return validateForm()">
+				<form method="POST" action="contact.php" id="contact_form">
+					<label for="subject">Subject</label>
 					<select id="subject" name="subject">
 						<option value="subject">Select a subject</option>
 						<option value="Quiz">Quiz</option>
@@ -42,17 +43,30 @@
 					<div class="error" id="subjectErr">
 					</div>
 					<!-- Message -->
+					<label for="message">Your message</label>
 					<textarea id="message" type="text" rows="14" name="message"></textarea>
 					<!-- Display errors -->
 					<div class="error" id="messageErr">
 					</div>
 					<!-- Submit button -->
-					<button id="submit" type="submit" name="submit">
+					<button type="submit" name="submit" id="five" class="button">
 						Send
 					</button>
 				</form>
 			</main>
+			<div id="modal-container">
+				<div class="modal-background">
+					<div class="modal">
+					  <h2>Thanks for your message</h2>
+					  <p>We'll get back to you as soon as possible!</p>
+						<svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+							<rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+						</svg>
+					</div>
+				</div>
+			</div>
 		</div>
+
 		<!-- Include footer -->
 		<?php include('templates/footer.php') ?>
 		<!-- JS -->
