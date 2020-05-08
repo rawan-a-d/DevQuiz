@@ -1,20 +1,27 @@
 <?php 
+	/* Paths */
+	$configPath = "app/model/config";
+	$viewPath = "app/view";
+
 	/* Check session */
-	include('config/session.php');
+	include("$configPath/session.php");
 
 	/* Session expiry */
-	include('config/session_expiry.php');
+	include("$configPath/session_expiry.php");
+
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- Title and meta data -->
 		<title>Dev Quiz</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<link rel="stylesheet" type="text/css" href="css/home.css">
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="<?php echo $viewPath; ?>/css/home.css">
 
 	<!-- Include header (links to css files and navbar) -->
-	<?php include('templates/header.php') ?>
+	<?php include("$viewPath/templates/header.php") ?>
 
 	<div id="content">
 		<!-- Header -->
@@ -122,10 +129,10 @@
 	</div>
 
 	<!-- Include footer -->
-	<?php include('templates/footer.php') ?>
+	<?php include("$viewPath/templates/footer.php") ?>
 
 	<!-- JS -->
-	<script type="text/javascript" src="js/anime.min.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="<?php echo $viewPath; ?>/js/anime.min.js"></script>
+	<script type="text/javascript" src="<?php echo $viewPath; ?>/js/index.js"></script>
 	</body>
 </html>

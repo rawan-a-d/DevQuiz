@@ -1,0 +1,300 @@
+body {
+	margin: 0;
+	font: 400 0.813em Arial;
+	background: lavender;
+}
+
+												/* Content */
+#content {
+	min-height: calc(100vh - 70px);
+}
+
+
+														/* Header */
+#website_purpose {
+	width: 70%;
+	margin: 7% 15% 1% 15%;
+	font-size: 1.1em;
+}
+
+														/* Main */
+#main {
+	display: grid;
+	grid-auto-rows: minmax(40px, auto);
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 20px;
+	grid-row-gap: 50px;
+	padding: 1% 15%;
+	margin-bottom: 5%;
+}
+
+/* All boxes */
+.box {
+	border-radius: 6px;
+	font-size: 1.2em;
+	line-height: 1.6em;
+}
+
+/* HTML */
+#box_html_explanation {
+	grid-column: 1 / 2;
+	grid-row: 1 / 5;
+	border: #005769 2px solid;
+	text-align: center;
+}
+#box_html_example {
+	grid-column: 2 / 3;
+	grid-row: 1 /  5;
+}
+
+/* CSS */
+#box_css_explanation {
+	grid-column: 1 / 2;
+	grid-row: 5 / 9;
+	border: #005769 2px solid;
+	text-align: center;
+}
+#box_css_example {
+	grid-column: 2 / 3;
+	grid-row: 5 / 9;
+}
+
+/* JS */
+#box_js_explanation {
+	grid-column: 1 / 2;
+	grid-row: 9 / 13;
+	border: #005769 2px solid;
+	text-align: center;
+}
+#box_js_example {
+	grid-column: 2 / 3;
+	grid-row: 9 / 13;
+}
+
+/* levels button */
+button {
+	cursor: pointer;
+	padding: 10px 0;
+	font-size: 0.95em;
+	border-radius: 3px;
+	border-style: none;
+	background-color: #d68916;
+	color:  white;
+	box-shadow: 0 5px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/* Code */
+pre {
+    box-shadow: 2px 4px 25px rgba(0,0,0,.15);
+    white-space:pre-line;
+    display:block;
+	border-left:#005769 solid 4px;
+	border-bottom:#005769 solid 1px;
+	font-size: 1em;
+	color: black;
+	background: rgb(253, 253, 253);
+	height: 88%;
+	padding: 2% 0 0 2%;
+}	
+
+pre > p {
+	margin: 0;
+}
+
+
+												/* Card */
+.card, .cardJS, .cardCSS
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back
+{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+.front
+{
+	font-size: 1.4em;
+    display: flex;
+}
+
+.back
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+	background: #fff;
+}
+
+.back > p {
+	margin : 5% 7%;
+}
+
+.card-container {
+  	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  	transition: 0.4s;
+    cursor: pointer;
+}
+
+.card-container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+
+												/* Media queries */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	#website_purpose {
+		margin: 15% 15% 1% 15%;
+	}
+
+	#main {
+		grid-template-columns: repeat(1, 1fr);
+		grid-auto-rows: minmax(40px, auto);	
+	}
+	button {
+		width: 70%;
+		display: block;
+		margin: 3% 15%;
+	}
+
+	.box {
+		font-size: 1em;
+	}
+
+	pre {
+		font-size: 1.2em;
+	}
+
+	#box_html_explanation {
+		grid-column: 1 / 2;
+		grid-row: 1 / 5;
+	}
+	#box_html_example {
+		grid-column: 1 / 2;
+		grid-row: 5 / 9;
+	}
+	#box_css_explanation {
+		grid-column: 1 / 2;
+		grid-row: 9 / 13;
+	}
+	#box_css_example  {
+		grid-column: 1 / 2;
+		grid-row: 13 / 17;
+	}
+	#box_js_explanation {
+		grid-column: 1 / 2;
+		grid-row: 17 / 21;
+	}
+	#box_js_example {
+		grid-column: 1 / 2;
+		grid-row: 21 / 25;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width : 767px) {
+	#main {
+		grid-template-columns: repeat(1, 1fr);
+		grid-auto-rows: minmax(40px, auto);	
+	}
+	button {
+		width: 30%;
+		display: inline-block;
+		margin: 5% 9%;
+	}
+	#box_html_explanation {
+		grid-column: 1 / 2;
+		grid-row: 1 / 5;
+	}
+	#box_html_example {
+		grid-column: 1 / 2;
+		grid-row: 5 / 9;
+	}
+	#box_css_explanation {
+		grid-column: 1 / 2;
+		grid-row: 9 / 13;
+	}
+	#box_css_example  {
+		grid-column: 1 / 2;
+		grid-row: 13 / 17;
+	}
+	#box_js_explanation {
+		grid-column: 1 / 2;
+		grid-row: 17 / 21;
+	}
+	#box_js_example {
+		grid-column: 1 / 2;
+		grid-row: 21 / 25;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width : 992px) {
+	button {
+		display: inline-block;
+		width: 33%;
+		margin: 2% 8%;
+	}
+
+	#main {
+		grid-template-columns: repeat(1, 1fr);
+		grid-auto-rows: minmax(40px, auto);	
+	}
+
+	#box_html_explanation {
+		grid-column: 1 / 2;
+		grid-row: 1 / 5;
+	}
+	#box_html_example {
+		grid-column: 1 / 2;
+		grid-row: 5 / 9;
+	}
+	#box_css_explanation {
+		grid-column: 1 / 2;
+		grid-row: 9 / 13;
+	}
+	#box_css_example  {
+		grid-column: 1 / 2;
+		grid-row: 13 / 17;
+	}
+	#box_js_explanation {
+		grid-column: 1 / 2;
+		grid-row: 17 / 20;
+	}
+	#box_js_example {
+		grid-column: 1 / 2;
+		grid-row: 20 / 24;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width : 1200px) {
+	button {
+		width: 40%;
+		display: inline-block;
+		margin: 2% 4%;
+	}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	button {
+		width: 40%;
+		display: inline-block;
+		margin: 2% 4%;
+	}
+}

@@ -1,0 +1,291 @@
+body {
+	margin: 0;
+	font: 400 0.813em Arial;
+	background: lavender;
+}
+
+									/* Content */
+#content {
+  min-height: calc(82vh - 70px);
+}
+
+/* email and name input, message textarea and subject select */
+input, textarea, #subject {
+	display: block;
+	width: 85%;
+	padding: 0.7% 0.3%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+/* email and name input and message textarea and label */
+#main > form > input, #main > form > textarea, #main > form > label{
+	display: block;
+	width: 90%;
+	margin-bottom: 0;
+}
+
+
+/* Subject select */
+#main > form > #subject {
+	width: 91%;
+	margin-bottom: 0;
+}
+
+/* Errors under input */
+div.error {
+	color: red;
+	margin: 0 5% 2%;
+	font: bold .8rem Arial;
+}
+
+/* Send button */
+button {
+	width: 30%;
+	display: inline-block;
+	cursor: pointer;
+	padding: 2.5% 3%;
+	font-size: 1.1em;
+	border-radius: 3px;
+	border-style: none;
+	background-color: #d68916;
+	color: white;
+	margin: 2% 5%;
+	box-shadow: 0 5px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+									/* Success message animation */
+html.modal-active, body.modal-active {
+	 overflow: hidden;
+}
+#modal-container {
+	 position: fixed;
+	 display: table;
+	 height: 100%;
+	 width: 100%;
+	 top: 0;
+	 left: 0;
+	 transform: scale(0);
+	 z-index: 1;
+}
+
+#modal-container.five {
+	 transform: scale(1);
+}
+
+#modal-container.five .modal-background {
+	 background: rgba(0, 0, 0, .0);
+	 animation: fadeIn 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.five .modal-background .modal {
+	 transform: translateX(-1500px);
+	 animation: roadRunnerIn 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+ #modal-container.five.out {
+	 animation: quickScaleDown 0s 0.5s linear forwards;
+}
+ #modal-container.five.out .modal-background {
+	 animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+ #modal-container.five.out .modal-background .modal {
+	 animation: roadRunnerOut 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+ 
+ #modal-container .modal-background {
+	 display: table-cell;
+	 background: rgba(0, 0, 0, .8);
+	 text-align: center;
+	 vertical-align: middle;
+}
+ #modal-container .modal-background .modal {
+	 background: white;
+	 padding: 50px;
+	 display: inline-block;
+	 border-radius: 3px;
+	 font-weight: 300;
+	 position: relative;
+}
+ #modal-container .modal-background .modal h2 {
+	 font-size: 25px;
+	 line-height: 25px;
+	 margin-bottom: 15px;
+}
+ #modal-container .modal-background .modal p {
+	 font-size: 18px;
+	 line-height: 22px;
+}
+ #modal-container .modal-background .modal .modal-svg {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 height: 100%;
+	 width: 100%;
+	 border-radius: 3px;
+}
+ #modal-container .modal-background .modal .modal-svg rect {
+	 stroke: #fff;
+	 stroke-width: 2px;
+	 stroke-dasharray: 778;
+	 stroke-dashoffset: 778;
+}
+ .content {
+	 min-height: 100%;
+	 height: 100%;
+	 background: white;
+	 position: relative;
+	 z-index: 0;
+}
+.content h1 {
+	 padding: 75px 0 30px 0;
+	 text-align: center;
+	 font-size: 30px;
+	 line-height: 30px;
+}
+.content .buttons {
+	 max-width: 800px;
+	 margin: 0 auto;
+	 padding: 0;
+	 text-align: center;
+}
+.content .buttons .button {
+	 display: inline-block;
+	 text-align: center;
+	 padding: 10px 15px;
+	 margin: 10px;
+	 background: red;
+	 font-size: 18px;
+	 background-color: #efefef;
+	 border-radius: 3px;
+	 box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+	 cursor: pointer;
+}
+.content .buttons .button:hover {
+	 color: white;
+	 background: #009bd5;
+}
+
+@keyframes fadeIn {
+	 0% {
+		 background: rgba(0, 0, 0, .0);
+	}
+	 100% {
+		 background: rgba(0, 0, 0, .7);
+	}
+}
+
+ @keyframes fadeOut {
+	 0% {
+		 background: rgba(0, 0, 0, .7);
+	}
+	 100% {
+		 background: rgba(0, 0, 0, .0);
+	}
+}
+
+ @keyframes quickScaleDown {
+	 0% {
+		 transform: scale(1);
+	}
+	 99.9% {
+		 transform: scale(1);
+	}
+	 100% {
+		 transform: scale(0);
+	}
+}
+
+
+ @keyframes roadRunnerIn {
+	 0% {
+		 transform: translateX(-1500px) skewX(30deg) scaleX(1.3);
+	}
+	 70% {
+		 transform: translateX(30px) skewX(0deg) scaleX(0.9);
+	}
+	 100% {
+		 transform: translateX(0px) skewX(0deg) scaleX(1);
+	}
+}
+
+ @keyframes roadRunnerOut {
+	 0% {
+		 transform: translateX(0px) skewX(0deg) scaleX(1);
+	}
+	 30% {
+		 transform: translateX(-30px) skewX(-5deg) scaleX(0.9);
+	}
+	 100% {
+		 transform: translateX(1500px) skewX(30deg) scaleX(1.3);
+	}
+}
+
+
+
+
+												/* Media queries */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	#main, #result {
+		width: 80%;
+		margin: 9% 10%;
+	}
+	#main > form > input, #main > form > textarea, #main > form > #subject, #main > form > label {
+		margin: 2% 5% 3% 5%;
+	}
+
+	button {
+		margin: 2% 5%;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width : 767px) {
+	#main, #result {
+		width: 80%;
+		margin: 7% 10%;
+	}
+	/* Form input, textarea, label and subject */
+	#main > form > input, #main > form > textarea, #main > form > #subject, #main > form > label {
+		margin: 2% 5% 2% 5%;
+	}
+	button {
+		margin: 2% 5%;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width : 992px) {
+	#main, #result {
+		width: 70%;
+		margin: 5% 15%;
+	}
+	/* Form input, textarea, label and subject */
+	#main > form > input, #main > form > textarea, #main > form > #subject, #main > form > label {
+		margin: 2% 5% 1.5% 5%;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width : 1200px) {
+	#main, #result {
+		width: 60%;
+		margin: 5% 20%;
+	}
+	/* Form input, textarea, label and subject */
+	#main > form > input, #main > form > textarea, #main > form > #subject, #main > form > label {
+		margin: 2% 5% 2% 5%;
+	}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	#main, #result {
+		width: 50%;
+		margin: 3% 25%;
+	}
+	/* Form input, textarea, label and subject */
+	#main > form > input, #main > form > textarea, #main > form > #subject, #main > form > label {
+		margin: 2% 5% 1.5% 5%;
+	}
+}
