@@ -169,8 +169,8 @@
 
 		try {
 			// Create sql query
-			$sql = "INSERT INTO messages (subject, message, userId) ";
-			$sql .= "VALUES (:subject, :message, :userId)";
+			$sql = "INSERT INTO messages (subject, message, userId, date) ";
+			$sql .= "VALUES (:subject, :message, :userId, now())";
 
 			$statement = $conn -> prepare($sql);
 
