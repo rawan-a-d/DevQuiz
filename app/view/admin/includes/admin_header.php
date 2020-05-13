@@ -1,5 +1,6 @@
 		<!-- Common css links(navbar) -->
 		<link rel="stylesheet" type="text/css" href="css/navbar.css">
+		<link rel="icon" type="image/png" href="img/logo.png" />
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
 	<body>

@@ -8,7 +8,7 @@
             <th>Email</th>
             <th>Role</th>
             <th>University</th>
-            <th>Birthday</th>
+            <th>Birthdate</th>
             <th>Program</th>
 
         </tr>

@@ -78,5 +78,5 @@ function redirect( a, b){
 	var currentPathname = splitPath.join("/");
 
 	// Redirect
-	window.location.href = currentPathname + "/View/quizpage.php?subject=" + a + "&level=" + b;
+	window.location.href = currentPathname + "/app/view/quizpage.php?subject=" + a + "&level=" + b;
 }
