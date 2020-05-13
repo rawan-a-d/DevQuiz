@@ -24,7 +24,7 @@
         <title>Users</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="css/users_messages.css">
+        <link rel="stylesheet" type="text/css" href="css/users.css">
         <!-- Include edit_user CSS file if it's the edit user page -->
         <?php 
             if(isset($_GET['source']) & !empty($_GET['source'])){

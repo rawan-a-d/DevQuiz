@@ -24,7 +24,7 @@
 		<title>Messages</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="css/users_messages.css">
+		<link rel="stylesheet" type="text/css" href="css/messages.css">
 
 		<!-- Header -->
 		<?php include 'includes/admin_header.php'; ?>
