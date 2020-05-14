@@ -11,7 +11,7 @@ function validateForm() {
 	var name = document.getElementById("name").value;
 	var email = document.getElementById("email").value;
 	var password = document.getElementById("password").value;
-	var confirmPassword = document.getElementById("confirmPassword").value;
+
 	// splitting name
 	var nameArr = name.split(' ');
 	var firstName = nameArr[0];
@@ -21,11 +21,10 @@ function validateForm() {
 	var nameErr = true;
 	var emailErr = true;
 	var passwordErr = true;
-	var confirmPasswordErr = true;
 
 	// Validate name
 	if(name == "") {
-		printError("nameErr", "Please enter your name");
+		printError("nameErr", "Name can't be empty");
 	}
 	else {
 		var regex = /^[a-zA-Z\s]+$/;                
@@ -40,7 +39,7 @@ function validateForm() {
 
 	// Validate email address
 	if(email == "") {
-		printError("emailErr", "Please enter your email address");
+		printError("emailErr", "Email can't be empty");
 	} 
 	else {
 		// Regular expression for basic email validation
@@ -56,7 +55,7 @@ function validateForm() {
 
 	//Validate password
 	if(password == "") {
-		printError("passwordErr", "Please enter your password");
+		printError("passwordErr", "Password can't be empty");
 	}
 	// If password contains first or last name or both
 	else if(password.includes(firstName) || password.includes(lastName)){
@@ -74,33 +73,9 @@ function validateForm() {
 		}
 	}
 
-    // Validate password
-	if(confirmPassword == "") {
-		printError("confirmPasswordErr", "Please enter your password");
-	}
-	// If password contains first or last name or both
-	else if(confirmPassword.includes(firstName) || confirmPassword.includes(lastName)){
-		printError("confirmPasswordErr", "Password can't contain you name");
-	}
-	else {
-		// To check a password between 7 to 15 characters which contain at least one numeric digit and a special character
-		var regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
-		if(regex.test(confirmPassword) === false) {
-			printError("confirmPasswordErr", "Password must contain 7 to 15 characters, at least one number and one charachter");
-		} else {
-			printError("confirmPasswordErr", "");
-			confirmPasswordErr = false;
-		}
-	}
-
-	//Passwords match
-	if(confirmPassword != password){
-		printError("passwordErr", "");
-		printError("confirmPasswordErr", "Passwords don't match");
-	}
-
     // Prevent the form from being submitted if there are any errors
-	if((nameErr || emailErr || passwordErr || confirmPasswordErr)) {
+	if((nameErr || emailErr || passwordErr)) {
+		console.log("error")
 		return false;
 	} 
 	else {

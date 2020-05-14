@@ -19,6 +19,7 @@
 	<!-- Common css links(navbar, footer) -->
 	<link rel="stylesheet" type="text/css" href="<?php echo $path ?>app/view/css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo $path ?>app/view/css/footer.css">
+	<link rel="icon" type="image/png" href="<?php echo $path ?>app/view/img/logo.png" />
 </head>
 <body>
 	<!-- Navbar -->

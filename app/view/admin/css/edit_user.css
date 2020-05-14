@@ -33,5 +33,13 @@ label {
 	border-style: none;
 	background-color: #d68916;
 	color: white;
-	box-shadow: 0 5px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.1	
+}
+
+
+
+/* Errors under input */
+div.error {
+	color: red;
+	font: bold .875rem Arial;
+	margin: -1% 0 2% 25%;
 }

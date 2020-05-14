@@ -7,6 +7,9 @@ ul {
 	background-color: #138ba4;
 	opacity: 0.9;
 	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 10;
 }
 
 li {
@@ -25,10 +28,12 @@ li a:hover:not(.active) {
 	background-color: #005769;
 }
 
+
 /* Active tab */
 .active {
 	background-color: #d68916;
 }
+
 
 /* Logout button */
 li#logout {

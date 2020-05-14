@@ -24,6 +24,7 @@
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="<?php echo $viewPath; ?>/css/home.css">
 
+
 	<!-- Include header (links to css files and navbar) -->
 	<?php include("$viewPath/templates/header.php") ?>
 
@@ -31,7 +32,7 @@
 		<!-- Header -->
 		<header id="website_purpose">
 			<h2>Hello <?php echo $_SESSION['username'] ;?></h2>
-			<h2>Welcome to DEVQUIZ</h2>
+			<h2>Welcome to DevQuiz</h2>
 			<h4>The most comprehensive resource with a lot of quality programming quiz, questions and tutorials that help you to improve you programming knowledge.</h4>
 		</header>
 

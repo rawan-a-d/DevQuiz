@@ -1,7 +1,4 @@
 <?php 
-	// Rememeber me
-	// If user wants to be remembered, keep his session as long as he's logged in
-
 	/* Create URL */
 	//returns the current url
 	$url = $_SERVER['REQUEST_URI']; 
@@ -11,13 +8,16 @@
 	// Create root path
 	$path = "";
 	for ($i = 0; $i < count($parts) - 1; $i++) {
-		if($parts[$i] != "view" && $parts[$i] != "app"){
+		if($parts[$i] != "app" && $parts[$i] != "view" && $parts[$i] != "admin"){
 			$path .= $parts[$i] . "/";
 		}
 	}
 
 	// Add login path
 	$path .= "app/view/login.php";
+
+	// Rememeber me
+	// If user wants to be remembered, keep his session as long as he's logged in
 
 	// If not remove his session after 1 hour
 	if(isset($_SESSION['userId']) && !isset($_SESSION['remember_me'])) {
