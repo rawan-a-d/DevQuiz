@@ -7,6 +7,14 @@
   /* Session expiry */
   include("$configPath/session_expiry.php");
 
+  /* Include classes */
+  include_once("../../includes/autoload.inc.php");
+
+  $controller = new UserController();
+  $userdata=$controller->getUser($_SESSION['userId']);
+  $birthday=$userdata['birthday'];
+  $university=$userdata['university'];
+  $program=$userdata['program'];
 ?>
 
 
@@ -36,7 +44,7 @@
                  </div>
                  <div class="data">
                    <h4>Birthday</h4>
-                    <!-- <p><?php echo $birthday;?></p> -->
+                     <p><?php echo $birthday;?></p> 
               </div>
             </div>
         </div>
@@ -45,11 +53,11 @@
             <div class="bottom_data">
                  <div class="data">
                     <h4>University</h4>
-                    <!-- <p><?php echo $university;?></p> -->
+                     <p><?php echo $university;?></p> 
                  </div>
                  <div class="data">
                    <h4>Progamming languages</h4>
-                    <!-- <p><?php echo $program;?>.</p> -->
+                     <p><?php echo $program;?>.</p> 
               </div>
             </div>
         </div>

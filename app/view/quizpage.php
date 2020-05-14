@@ -8,19 +8,22 @@
   include("$configPath/session_expiry.php");
     // DB connection
   include("$configPath/db_connect.php");
+
+  /* Include classes */
+  include_once("../../includes/autoload.inc.php");
   
 
-    $ok=1;
+    $ok=1;$havequestions=1;
     if (isset($_GET['subject'])) $subject=$_GET['subject'];
     else $ok=0;
     if (isset($_GET['level'])) $level=$_GET['level'];
     else $ok=0;
     if ($ok){
-      //include_once("templates/connect.php");
-		  $getQ = $conn->prepare("SELECT * FROM questions WHERE subj=".$subject." AND level=".$level.";");
-		  $getQ->execute();
-      $questions = $getQ->fetchAll();
-      $nrq=$getQ->rowCount();
+      $controller = new quizzController();
+      $questions=$controller->getQuestionsBySubjectLevel($subject, $level);
+      $nrq=$controller->getCountBySubjectLevel($subject, $level);  
+      if (!$nrq) $havequestions=0;
+
       if (!isset($_SESSION['currentq']))
       {
           $_SESSION['currentq']=0;
@@ -70,7 +73,7 @@
           var currentPathname = splitPath.join("/");
 
           // Redirect
-          window.location.href = currentPathname + "/QuizPage.php?subject=<?php echo $subject;?>&level=<?php echo $level;?>&c="+ok;
+          window.location.href = currentPathname + "/quizpage.php?subject=<?php echo $subject;?>&level=<?php echo $level;?>&c="+ok;
       }
     </script>
 
@@ -79,10 +82,8 @@
   <header  id="website_purpose">
       <h1 class="testname">
         <?php 
-          $getS = $conn->prepare("SELECT * FROM subjects WHERE id=".$q['subj'].";");
-          $getS->execute();
-          $subj_name = $getS->fetchAll();
-          echo $subj_name[0]['name'];
+          $controller = new quizzController();
+          echo $controller->getSubjectBYID($subject);
         ?>
       </h1>
   </header>
@@ -119,8 +120,6 @@
             
             </li>
             
-            
-        
         </ol>
         
         <input class="submitbutton" type="submit" value="Submit Question" onclick="verify();"/>
@@ -128,16 +127,39 @@
         <?php
         }
         else {
-          ?>
-          <!--html code here-->
-          <div id="content">
-          <div class="page-wrap">
-          <h3>Bravo</h3>
-          <h3>You answered correctly:</h3>
-          <h3><?php echo $_SESSION['correctans'];?>  /  <?php echo $nrq;?></h3>
+          if ($havequestions)
+          {
+            ?>
+            <!--html code here-->
+            <div id="content">
+            <div class="page-wrap">
+            <h3>Bravo</h3>
+            <h3>You answered correctly:</h3>
+            <h3><?php echo $_SESSION['correctans'];?>  /  <?php echo $nrq;?></h3>
+            </div>
           </div>
-        </div>
           <?php
+            $_SESSION['currentq']=-1;
+            $_SESSION['correctans']=0;
+            //unset($nrq);
+            //unset($ok);
+            //unset($q);
+            //unset($questions);
+            //unset($_SESSION['currentq']);
+            //unset($_SESSION['correctans']);
+          }
+          else 
+          {
+            ?>
+            <!--html code here-->
+            <div id="content">
+            <div class="page-wrap">
+            <h3>This section</h3>
+            <h3>Has no questions yet!</h3>
+            </div>
+          </div>
+          <?php
+          }
         }?>
     
 </div>

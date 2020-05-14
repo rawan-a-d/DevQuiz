@@ -1,3 +1,48 @@
 .page-wrap {
 	margin: 5% 25%;
+	font: 14px Arial, Serif; 
+}
+.page-wrap h1 { 
+    margin: 25px 0; 
+    font: 24px Arial, Serif; 
+    text-transform: uppercase; 
+    letter-spacing: 3px;
+    color: #e69214;
+}
+.page-wrap #question {
+	width: 77%;
+	font: 14px Arial, Serif; 
+}
+.page-wrap #answer1 {
+	width: 65%;
+	font: 14px Arial, Serif; 
+}
+.page-wrap #answer2 {
+	width: 65%;
+	font: 14px Arial, Serif; 
+}
+.page-wrap #answer3 {
+	width: 65%;
+	font: 14px Arial, Serif; 
+}
+.page-wrap #answer4 {
+	width: 65%;
+	font: 14px Arial, Serif; 
+}
+.page-wrap #qtype{
+	background-color: #139cb8;
+}
+.save{
+	width: 25%;
+	height: 50px;
+	padding: 1px;
+	-moz-border-radius: 35px;
+	border-radius: 35px;
+	background-color: #e69214;
+	color: #138ba4;
+	position: sticky;
+	bottom: 1;
+	text-align: center;
+	margin-left: 40%;
+	margin-top: 20%;
 }

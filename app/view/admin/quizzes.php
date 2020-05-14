@@ -11,6 +11,9 @@
 
 	/* Check if user is admin */
 	include("includes/admin_session.php");
+
+	/* Include classes */
+	include_once("includes/autoload.inc.php");
 ?>
 
 
@@ -23,9 +26,11 @@
 		$type=$_GET['qtype'];
 		$qnr=0;
 	   // include_once("templates/connect.php");
-		$getQ = $conn->prepare("SELECT * FROM questions WHERE subj='".$type."';");
+		/*$getQ = $conn->prepare("SELECT * FROM questions WHERE subj='".$type."';");
 		$getQ->execute();
-		$questions = $getQ->fetchAll();
+		$questions = $getQ->fetchAll();*/
+		$controller = new quizzController();
+		$questions = $controller->getQuestionsBySubject($type);
 		if (!isset($_SESSION['qnr']))
 		{
 			$_SESSION['qnr']=$questions[0]['id'];
@@ -53,9 +58,11 @@
 		if (!isset($_GET['type']))
 		{
 			//include_once("templates/connect.php");
-			$getQ = $conn->prepare("SELECT * FROM questions;");
+			/*$getQ = $conn->prepare("SELECT * FROM questions;");
 			$getQ->execute();
-			$questions = $getQ->fetchAll();
+			$questions = $getQ->fetchAll();*/
+			$controller = new quizzController();
+			$questions = $controller->getAllQuestions();
 			if (!isset($_SESSION['qnr']))
 			{
 				$_SESSION['qnr']=$questions[0]['id'];
@@ -81,9 +88,11 @@
 			$type=$_GET['type'];
 			$qnr=0;
 			//include_once("templates/connect.php");
-			$getQ = $conn->prepare("SELECT * FROM questions WHERE subj='".$type."';");
+			/*$getQ = $conn->prepare("SELECT * FROM questions WHERE subj='".$type."';");
 			$getQ->execute();
-			$questions = $getQ->fetchAll();
+			$questions = $getQ->fetchAll();*/
+			$controller = new quizzController();
+			$questions = $controller->getQuestionsBySubject($type);
 			if (!isset($_SESSION['qnr']))
 			{
 				$_SESSION['qnr']=$questions[0]['id'];
@@ -116,8 +125,8 @@
 	else
 	{
 		// include_once("templates/connect.php");
-		$setQ = $conn->prepare("UPDATE questions SET question='".$_POST['question']."', ans_a='".$_POST['answer1']."', ans_b='".$_POST['answer2']."', ans_c='".$_POST['answer3']."', ans_d='".$_POST['answer4']."', answer='".$_POST['canswer']."' WHERE id='".$_SESSION['qnr']."';");
-		$setQ->execute();
+		/*$setQ = $conn->prepare("UPDATE questions SET question='".$_POST['question']."', ans_a='".$_POST['answer1']."', ans_b='".$_POST['answer2']."', ans_c='".$_POST['answer3']."', ans_d='".$_POST['answer4']."', answer='".$_POST['canswer']."' WHERE id='".$_SESSION['qnr']."';");
+		$setQ->execute();*/
 		$q=$_POST['question'];
 		$a1=$_POST['answer1'];
 		$a2=$_POST['answer2'];
@@ -125,11 +134,14 @@
 		$a4=$_POST['answer4'];
 		$c=$_POST['canswer'];
 		$type=$_SESSION['qtype'];
+		$controller = new quizzController();
+		$controller->UpdateQuestionByID($q, $a1, $a2, $a3, $a4, $c, $type);
 	}
-	$gettype = $conn->prepare("SELECT * FROM subjects;");
+	/*$gettype = $conn->prepare("SELECT * FROM subjects;");
 	$gettype->execute();
-	$typename = $gettype->fetchAll();
-		
+	$typename = $gettype->fetchAll();*/
+	$controller = new quizzController();
+	$typename = $controller->getAllSubjects();
 		
 ?>
 <!DOCTYPE html>
@@ -151,7 +163,6 @@
 
 			<div id="content">
 				<div class="page-wrap">
-
 					<form action="" method="POST">
 						<h1>Modify a question</h1>
 						<a href="quizzes.php?type=<?php echo $type;?>&dir=1" class="previous">&laquo; Previous</a>   
@@ -177,7 +188,7 @@
 							<option value="c" <?php if ($c=='c') echo "selected";?>>C</option>
 							<option value="d" <?php if ($c=='d') echo "selected";?>>D</option>
 						</select>
-						<p><BR/></p>
+						<p></p>
 						<input type="submit" name="save" class="save" value="Save">
 					</form>
 				</div>

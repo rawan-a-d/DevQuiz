@@ -2,6 +2,7 @@
 	/* Paths */
 	$configPath = "app/model/config";
 	$viewPath = "app/view";
+	
 
 	/* Check session */
 	include("$configPath/session.php");
@@ -9,6 +10,9 @@
 	/* Session expiry */
 	include("$configPath/session_expiry.php");
 
+	//Reset q number
+	$_SESSION['currentq']=-1;
+	$_SESSION['correntans']=0;
 ?>
 
 <!DOCTYPE html>
