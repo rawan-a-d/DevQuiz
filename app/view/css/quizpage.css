@@ -4,10 +4,15 @@ body {
     background: lavender;
 }
 
+                                                /* Content */
+#content {
+    min-height: calc(100vh - 201px);
+}
 
-.page-wrap	{ 
+
+.page-wrap	{
     width: 40%; 
-    margin: 0 auto 10%;
+    margin: 6% auto 10%;
     box-shadow: 0 10px 20px 0 #138ba4;
 }
 
@@ -59,4 +64,6 @@ body {
  }
 .testname{
     color: #e69214;
+    margin: 6% auto 0;
+    text-align: center;
 }

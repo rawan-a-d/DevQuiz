@@ -17,8 +17,6 @@
 ?>
 
 
-<!-- DB connection -->
-<?php include_once("$configPath/db_connect.php"); ?>
 
 	<?php 
 	if (isset($_GET['qtype']))  

@@ -6,8 +6,6 @@
 
   /* Session expiry */
   include("$configPath/session_expiry.php");
-    // DB connection
-  include("$configPath/db_connect.php");
 
   /* Include classes */
   include_once("../../includes/autoload.inc.php");
@@ -133,7 +131,6 @@
             <!--html code here-->
             <div id="content">
             <div class="page-wrap">
-            <h3>Bravo</h3>
             <h3>You answered correctly:</h3>
             <h3><?php echo $_SESSION['correctans'];?>  /  <?php echo $nrq;?></h3>
             </div>
