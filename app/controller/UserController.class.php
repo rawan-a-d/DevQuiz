@@ -60,13 +60,8 @@ class UserController extends UserManager {
 	public function signUp($name, $email, $role, $password) {
 		$this->model->signUp($name, $email, $role, $password);
 
-		// Start user session
-		session_start();
-
-		// Save user name
-		$_SESSION['username'] = $name;		
-
-		header('Location: ../../index.php');
+		// Login
+		$this->login($email, $password);
 	}
 
 	/* Login */
