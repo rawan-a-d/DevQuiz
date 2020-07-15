@@ -59,7 +59,8 @@
 							$email = $row['email'];
 							$subject = $row['subject'];
 							$message = $row['message'];
-							$date = $row['date'];
+							//$date = $row['date'];
+							$date = $row['created_at'];
 
 							?>
 

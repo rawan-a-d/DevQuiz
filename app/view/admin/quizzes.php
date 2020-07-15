@@ -46,7 +46,7 @@
 				$a3=$question['ans_c'];
 				$a4=$question['ans_d'];
 				$c=$question['answer'];
-				$type=$question['subj'];
+				$type=$question['subject_id'];
 				$_SESSION['qtype']=$type;
 			}
 		}
@@ -76,7 +76,7 @@
 					$a3=$question['ans_c'];
 					$a4=$question['ans_d'];
 					$c=$question['answer'];
-					$type=$question['subj'];
+					$type=$question['subject_id'];
 					$_SESSION['qtype']=$type;
 				}
 			}
@@ -114,7 +114,7 @@
 					$a3=$question['ans_c'];
 					$a4=$question['ans_d'];
 					$c=$question['answer'];
-					$type=$question['subj'];
+					$type=$question['subject_id'];
 					$_SESSION['qtype']=$type;
 				}
 			}

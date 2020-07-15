@@ -6,8 +6,12 @@ class MessageManager extends Dbh {
 	/* Get all messages from users */
 	protected function getAllMessages(){
 		try {
-			$sql = "SELECT m.id, m.subject, m.message, m.date, u.name, u.email FROM messages AS m ";
-			$sql .= "INNER JOIN users AS u ON m.userId = u.Id";
+			//$sql = "SELECT m.id, m.subject, m.message, m.date, u.name, u.email FROM messages AS m ";
+			//	$sql .= "INNER JOIN users AS u ON m.userId = u.Id";
+
+			$sql = "SELECT m.id, m.subject, m.message, m.created_at, u.name, u.email FROM messages AS m ";
+
+			$sql .= "INNER JOIN users AS u ON m.user_id = u.Id";
 
 			$statement = $this->connect()->prepare($sql);
 
@@ -47,7 +51,8 @@ class MessageManager extends Dbh {
 	public function addMessage($userId, $subject, $message){
 		try
 		{
-			$sql = "INSERT INTO messages (subject, message, userId, date) ";
+			//$sql = "INSERT INTO messages (subject, message, user_id, date) ";
+			$sql = "INSERT INTO messages (subject, message, user_id, created_at) ";
 			$sql .= "VALUES (:subject, :message, :userId, now())";
 
 			$statement = $this->connect()->prepare($sql);

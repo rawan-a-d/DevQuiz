@@ -44,7 +44,7 @@ class quizzManager extends Dbh {
     /* Get questions by subject and level */
     public function getQuestionsBySubjectLevel(int $subject, int $level){
         try {
-            $sql = "SELECT * FROM questions WHERE subj=".$subject." AND level=".$level.";";
+            $sql = "SELECT * FROM questions WHERE subject_id=".$subject." AND level=".$level.";";
             
 
             $statement = $this->connect()->prepare($sql);
@@ -62,7 +62,7 @@ class quizzManager extends Dbh {
     /* Get number of questions by subject and level */
     public function getCountBySubjectLevel(int $subject, int $level){
         try {
-            $sql = "SELECT * FROM questions WHERE subj=".$subject." AND level=".$level.";";
+            $sql = "SELECT * FROM questions WHERE subject_id=".$subject." AND level=".$level.";";
             
 
             $statement = $this->connect()->prepare($sql);
@@ -98,7 +98,7 @@ class quizzManager extends Dbh {
     /* Get questions by subject*/
     public function getQuestionsBySubject(int $subject){
         try {
-            $sql = "SELECT * FROM questions WHERE subj=".$subject.";";
+            $sql = "SELECT * FROM questions WHERE subject_id=".$subject.";";
             
 
             $statement = $this->connect()->prepare($sql);

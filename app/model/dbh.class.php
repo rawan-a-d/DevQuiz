@@ -2,15 +2,22 @@
 
 class Dbh {
 	// db connection
-	private $host= "studmysql01.fhict.local";
-	private $port = "81";
-	private $username = "dbi414572";
-	private $password = "password";
-	private $db = "dbi414572";
+	// private $host= $config['host'];
+	// private $port = $config['port'];
+	// private $username = $config['username'];
+	// private $password = $config['password'];
+	// private $db = $config['dbname'];
 
 	protected function connect() {
-        $dsn = 'mysql:host='.$this->host.';dbname='.$this->db;
-        $pdo = new PDO($dsn,$this->username,$this->password);
+      // Load configuration as an array. Use the actual location of your configuration file
+      $config = parse_ini_file('config/config.ini');
+
+       //  $dsn = 'mysql:host='.$this->host.';dbname='.$this->db;
+       //  $pdo = new PDO($dsn,$this->username,$this->password);
+      	// $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
+
+      	$dsn = 'mysql:host='.$config['host'].';dbname='.$config['dbname'];
+        $pdo = new PDO($dsn,$config['username'],$config['password']);
       	$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
 
         return $pdo;

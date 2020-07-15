@@ -95,6 +95,8 @@ function validateForm() {
 
 	//Passwords match
 	if(confirmPassword != password){
+		confirmPasswordErr = true;
+		passwordErr = true;
 		printError("passwordErr", "");
 		printError("confirmPasswordErr", "Passwords don't match");
 	}
